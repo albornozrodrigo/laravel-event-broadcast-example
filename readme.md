@@ -7,6 +7,12 @@ Download or clone this repository and install the Composer dependencies.
 composer install
 ```
 
+# Copy the .env file
+Copy the .env file with the code below.
+```
+cp .env.example .env
+```
+
 # Generate key
 Generate the app key.
 ```
