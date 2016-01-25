@@ -1,27 +1,42 @@
-## Laravel PHP Framework
+# laravel-event-broadcast-example
+Laravel realtime event broadcast example using [Redis](http://redis.io), [Node.JS](https://nodejs.org) and [Socket.IO](http://socket.io).
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+# Setup
+Download or clone this repository and install the Composer dependencies.
+```
+composer install
+```
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+# Generate key
+Generate the app key.
+```
+php artisan key:generate
+```
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+# Install Node.JS modules
+Make sure that you have already installed  [Node.JS](https://nodejs.org).
+```
+npm install
+```
 
-## Official Documentation
+# Running Node.JS server
+Run the NodeJS server with the command below.
+```
+node socket.js
+```
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+# Running Redis server
+Make sure that you have already installed [Redis](http://redis.io) and run the Redis server with the command below.  
+Note: If you are using Windows, install [Redis for Windows](https://github.com/rgl/redis/downloads), go to `C:\Program Files\Redis` and execute the `redis-server.exe` program.
+```
+redis-server --port 3001
+```
 
-## Contributing
+# Running Laravel
+Run the application with the command below.
+```
+php artisan serve
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+# Testing
+Now, open `http://localhost:8000/show` to see the results and `http://localhost:8000/fire` to fire the event.
